@@ -1,79 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/activity_main.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    android:padding="16dp">
+    tools:context=".LoginActivity">
 
+    <!-- Logo Placeholder -->
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="241dp"
+        android:layout_width="300dp"
         android:layout_height="314dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:src="@drawable/logo" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/appNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="THREESTORATION"
-        android:textSize="24sp"
+        android:text="Login"
+        android:textSize="20sp"
         android:textColor="@android:color/black"
-        android:layout_below="@id/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="30dp"
+        android:gravity="start" />
 
+    <!-- Username Field -->
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:layout_marginTop="16dp"
-        android:background="@android:drawable/editbox_background"
         android:hint="Nama User"
-        android:minHeight="48dp"
-        android:paddingLeft="8dp" />
+        android:padding="15dp"
+        android:layout_below="@id/appNameTextView"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_background"
+        android:drawableStart="@drawable/ic_user"
+        android:drawablePadding="10dp" />
 
+    <!-- Password Field -->
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/username"
-        android:layout_marginTop="8dp"
-        android:background="@android:drawable/editbox_background"
+        android:layout_below="@id/usernameEditText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_text_background"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="10dp"
         android:hint="Kata Sandi"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:paddingLeft="8dp" />
+        android:padding="10dp" />
 
-    <TextView
-        android:id="@+id/forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lupa Kata Sandi?"
-        android:textColor="@android:color/black"
-        android:layout_below="@id/password"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:id="@+id/create_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buat Akun"
-        android:textColor="@android:color/black"
-        android:layout_below="@id/password"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"/>
-
-    <Button
-        android:id="@+id/login_button"
+    <!-- Forgot Password and Create Account Links -->
+    <LinearLayout
+        android:id="@+id/linksLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/forgot_password"
-        android:layout_marginTop="16dp"
-        android:minHeight="48dp"
-        android:text="Masuk" />
+        android:orientation="horizontal"
+        android:layout_below="@id/passwordEditText"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:id="@+id/forgotPasswordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lupa Kata Sandi?"
+            android:textColor="@android:color/holo_blue_light" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/createAccountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buat Akun"
+            android:textColor="@android:color/holo_blue_light" />
+    </LinearLayout>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Masuk"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/linksLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 
 </RelativeLayout>
